@@ -1,0 +1,21 @@
+
+Method
+    is a collection of statments, one or more, that perform an operation
+
+    it's the entry point for any java code, and java looks for the main method to start and run the program when we use it
+
+&&
+    and operator
+
+|| 
+    or operator
+
+The Ternary operator
+    java officially calls it the conditional operator - has three operands, the only operator currnelty in java that does have three
+
+    The ternary operator is a shortcut to assigning one of two values to a variables, depending on a given condition.
+
+    operead ? operead : operand 3
+
+Java Operator Precedence Table
+

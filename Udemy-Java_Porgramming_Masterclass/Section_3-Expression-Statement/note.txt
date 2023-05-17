@@ -1,0 +1,28 @@
+Java's code units
+
+    writing code is similar to writing a document. It consists of special hierarchical units, which together form a whole.
+
+    There are:
+        The expression - An expression computes to a single value.
+
+        The statement - statements are stand alone units of work.
+
+        and Code Blocks - a code block is a set of zero, one, or more statements, usually grouped together in some way to achieve a single goal
+
+Method
+    A method decalres executable code tha can be invoked, passing a fixed number of values as arugments.
+
+    A method is a way of reducing code duplication
+
+Method Overloading
+    Method overloading occurs when a class has multiple methods, with the same name, but the methods are declared with different parameters
+
+    So you can execute a method with one name, but call it with different arugments.
+
+    Java can resolve which method it needs to execute, based on the arguments being passed, when the method is invoked.
+
+    The type, order and number of parameters, in conjuntion with the name, make a method signature unique
+
+    A unique method signature is the key for the java complier, to determine if a method is overlaoded correctly.
+
+    return type is not used to detemined method overloading
