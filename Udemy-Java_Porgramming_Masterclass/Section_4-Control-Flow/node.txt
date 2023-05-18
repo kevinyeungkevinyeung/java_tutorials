@@ -1,0 +1,117 @@
+Switch Value Types
+    valid Swtich Value Types
+        byte, short, int ,char
+        Byte, short, integer, character
+        String
+        enum
+
+    important: Cannot use long, float, double or boolean or their wrappers
+
+for 
+    The for loop is more complex to set up but is commonly used when you are iterating over a set of values
+
+while
+    The while loop executes until a specified condition becomes false.
+
+do while
+    The do while loop always executes at least on and continues until a specified condition becomes false
+
+Local Variables
+
+    local Variables  it is available for use by the code block in which it was declared
+
+    it is also available to code blocks that are contained by a declaring block
+
+    local variables are always in scope, in the block they are declared.
+
+    They are also in scope for any nested blocks, or blocks contained within the outer block.
+
+    Local variavles are always out of scope, for outer blocks, or the containing blocks they are declared in.
+
+
+Scope
+    Scope describes the accessibility of a Variables
+    
+    'In Scope' means the variable can be used by an exeuting block or any nested blocks.
+
+    'Out of scope' means the variable is no longer available
+
+Scope Best Practices
+    It is considered best practive:
+        to delcare and initialize variables in the same place if possible
+
+        and to delcare variable in the narrowest scope possible
+
+A class can be described as:
+
+    a custom data type
+
+    a special code block that contains methods
+
+A object 
+    an object is called an instance of a particular class
+
+Declaring and instantiating a new object from a class
+    The most common way to create an object, is to use the new keyword
+
+    The new keyword creates an instance, and you can sometimes pass data, when creating an instance, to set up data on that object.
+
+    The string is sepcial because we can creat a string, just by using a literal
+        String s = "Hello";
+
+        String s = new String("Hello");
+
+Static and instance fields
+
+    Static fields
+        requires 'static' keyword when decalred on the class
+
+        value of the field is stored in special memory location and only in one place
+
+        value is accessed by ClassName.fieldname
+
+        Example: Integer.MAX_VALUE
+
+    Instance field 
+        omits 'static' keyword when declared on the class
+
+        value of the field is not allocated any memory and has no value until the object is created
+
+        value is accessed by 
+            ObjectVariable.fieldname
+        
+        Example: my_Object.myFieldName
+
+    
+Static and Instance methods
+
+    Static methods
+        requires 'static' keyword when declared on the class
+
+        method is accessed by ClassName.methodName
+
+        Exmaple:
+            Integer.parseInt("123);
+
+        A method called parseInt is called directly form the class integer
+
+    Instance method
+        omits 'static' keyword when declared on the class
+
+        Method is accessed by 
+            ObjectVariable.methodName
+
+        Example:
+            "Hello".toUpperCase();
+
+        A method called toUpperCase is called on the instance of a String with value "hello"
+
+new keyword
+    The new keyword is used in what java calls, a class instance creation expression
+
+    in its simplest form, it's the word new, followed by the class name and empty parentheses.
+
+    ClassName variableName = new ClassName();
+
+
+
