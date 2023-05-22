@@ -1,0 +1,566 @@
+ Object Oriented Programming
+
+    Object oriented programming is a way to model real world objects, as software objects, which contian both data and code
+
+    State (ant)
+        we coulld also describe animate objects, like people or animals or even insects, like an ant:
+            The age
+            The number of legs
+            The conscious State
+            Whether the an is sleeping or is awake
+
+    Behavior 
+        actions that can be performed by the object, or upon the object.
+
+        Booting up
+        Shutting down
+        Deeping, or outputting some form of sound
+        Drawing something on the screen and so on
+
+    State and Behavior
+        so modelling real wordl objects as software objects, is a fundamental part of OOP
+
+        Now, a software object stores its state in fields, which can also be called variables, or attributes
+
+        And objects expose their behavior with methods, which we've talked about before.
+
+        So, where does a class fit in?
+
+        Well, think of a class as a template, or a blueprint for creating objects.
+
+    The class as the blueprint
+        The class describe the data(field),  and the behavior (methods), that are relevant to the real world object we want to describe
+
+        A class member can be a field, or a method or some other type of dependent elements.
+
+        If a field is static, there is only one copy in memory, and this value is associated with the class, or template, itself.
+
+        If a field is not static, it's called an instance field, and each object may have a different value stored for this field.
+
+        A static method can't be dependent on any one object's statem so it can't reference any instance members.
+
+        In other words, any method that operates on instance fields, need to be non-static
+
+    Organizing Classes
+
+        classes can be organized into logical groupings, which are called packages
+
+        you declare a package name in the class using the package statment
+
+        if you don't declare a package, the class implicitly belongs to the default package.
+
+    Access modifiers for the class
+        A class is said to be a top-level class, if it is defined in the source code file, and not enclosed in the code block of another class, type or method
+
+        A top-level class has only two valid access modifiers options: public or none
+            public:
+                means any other class in any package can access this class
+
+            When the modifier is omitted, this has sepcial meaning, called package access, meaning the class is accessible only to classes in the same package.
+
+    Access modifiers for class members
+        An access modifier at the member level, allows granular control over class members.
+
+        Access keyword      Description
+            public          public means any other class in any package can access this class
+            protected       protected allows classes in the same package, and any subclasses in other packages, to have access to the member.
+                            when the modifier is omitted, this has special meaning, called package access, meaning the member is accessible only to classes in the same package
+            private         private means that no other class can access this member
+
+    Encapsulation
+        1. one is the bundling of behavior and attributes on a single object
+
+        2. The other is the practice of hiding fields, and some methods, from public access.
+
+    What is null?
+        null is a special keyword in java, meaning the variable or attributes has a type, but no reference to an object.
+
+        This means that no instance, or object, is assigned to the variable or field. 
+
+        Fiels with primitive data types are never null
+
+    Default values for fields on classes
+        Fields on classes are assigned default values, intrinsically by java, if not assigned explicitly.
+
+        boolean = false
+
+        byte, short, int, long, char = 0
+
+        double, float = 0.0
+
+    What are getters and setters? Why should we use them?
+        so, what are getters and setters?
+
+        A getter is a method on a class, that retrieves the value of a private field, and returns it.
+
+        A setter is a method on a class, that sets the value of a private field
+
+        The purpose of the these methods is to control, and protect, acess to private fields.
+
+    This
+        this is a special keyword in java
+        
+        What it really refers to is the instance that was creted when the object was instatiated
+
+        so this is a sepcial reference name for the object or instance, which it can use to describe itself.
+
+        and we can use this to access fields on the class.
+
+    Constructor
+        A constructor is used in the creation of an object, that's an instance of a class.
+
+        It is a special type of code block that has a specific name and parameters, much like a method.
+
+        It has the same name as the class itself, and it doesn't return any values.
+
+    The default constructor
+        If a class contains no constructor declarations, then a default constructor is implicitly declared.
+
+        This constructor has no parameters, and is often called the no-args (no arguments)
+
+        If a class contains any other constructor declarations, then a default constructor is NOT implicitly declared
+
+    Constructor overloading
+        Constructor overloading is declaring multiple constructor, with different formal parameters.
+
+        The number of parameters can be different between constructors.
+
+        or if the number of parameters is the same between two constructors, their types of order of the types must differ.
+    
+Reference vs Object vs Instance Vs Class
+
+    Let's use the analogy of building a house to understand classes.
+
+    A class is basically a blueprint for the house.
+
+    Using the blueprint, we can build as many houses as we like, based on those plans
+
+    Each house we build (in other words using the new operator) is an object.
+
+    This object cna also be known as an instance, often we'll say it's an instance of the class. SO we would have an instance of house in this example.
+
+    Each house we build has an address (a physical location)
+
+    In other words, if we want to tell someone where we live, we give them our address (perhaps wriiten on a piece of paper). This is known as reference
+
+    We can copy that reference as many times we like, but there is still just one house that we're referring to.
+
+    In other words, we're copying the paper that has the address on it, not the house itself.
+
+    We can pass reference as parameters to constructors and methods.
+
+Static vs Instance variable
+
+    Decalred by using keyword static
+
+    Static variables are also known as static member variables
+    
+    Every instance of the class shares the same static variable
+
+    So if changes are made to that variable, all other instances of that class will see the effect of that change
+
+    Static varialbes aren't used very often, but can sometimes be very useful
+
+        They can be used for:
+            storing counters.
+
+            Generating unique ids.
+
+            Storing a constant value that doesn't change, like PI for example
+
+            Creating and controlling access, to a shared resource
+
+    Instance variables
+        They don't use the static keyword
+
+        They're also known as fields, or member variables
+
+        Instance variable belong to a specific instance of a class
+
+        each instnace has its won copy of an instance variable
+        
+        every instance can have a different value.
+
+        Instance variable represent the state, of a specific instance of a class.
+
+Static vs Instance Methods
+
+    Static methods are delcared using a static modifier
+
+    Static methods can't access instance methods and instant variables directly
+
+    They're usually used for operations that don't require any data from an instance of the class (from 
+    this )
+
+    If you remember, the this keyword is the current instance of a class
+
+    so inside a static method, we can't use the this keyword
+
+    Whenever you see a method that doesn't use instance variables, that method should probably be declared as a static method.
+
+    For example, main is a static method, and it's called by the java virtual machine when it starts the Java Application.
+
+    Instance methods
+        instance methods belong to an instance, of a class.
+
+        To use an instance method, we have to instantiate the class first, usually by using the new keyword.
+
+        instance methods can access instance methods and isntance variables directly
+
+        instance methods can also accesss static methods and static variables directly
+
+    Should a method be static?
+        does it use any field (instance variables) or instance methods?
+
+        yes => instance method
+
+        no => static method
+
+Plain Old Java Object
+    A plain old java object (whose acronym is POJO) is a class that generally only has instance fields
+
+    It's used to house data, and pass data, between functional classes.
+
+    It usually has few, if any methods other than getters and setters.
+
+    Many database frameworks use POJO's to read data from, or to write data to, databases, file or streams.
+
+    A POJO alos might be called a bean, or javaBean
+
+    A JavaBean is just a POJO, with some extra rules applied to it.
+
+    A POJO is sometimes called an entity, because it mirrors database entities.
+
+    Another acronym is DTO, for Data Transfer Object.
+
+    It's a description of an object, that can be modeled as just data
+
+    support for POJO creation
+        There are many generation tools, that will turn a data model into generated POJO's or JavaBeans
+
+Annotation
+    Annotation are a type of metadata.
+
+    Metadata is a way of formally describing additional information about our code.
+
+    Annotations are more structured, and have more meaning, than comments.
+
+    This is because they can be used by the compiler, or other types of pre-processing functions, to get information about the code.
+
+    Metadata doesn't effect how the code runs, so this code will still run, with or without the annotation.
+    
+Overridden Methods
+    An overrideden method, is not the same thing as overloaded method.
+
+    An overridden method is a special method in java, that other classes can implement, if they use a specified method signature.
+
+The record type
+    The record was introduced in JDK 14, and became officially part of java in JDK 16.
+
+    It's purpose is to replace the boilerplate code of the POJO, but to be more restrictive.
+
+    Java calls them "plain data carriers
+
+    The record is a special class that contains data, that's not meant to be altered
+
+    In other words, it seeks to achieve immutability, for the data in its members.
+
+    It contains only the most fundamental methods, such as constructors and accessors.
+
+    Best of all, the developer, don't have to write or generate any of this code.
+
+Implicit or Generated Code that Java provide
+    public record LSAStudent(String id, String name, String dateOfBirth, String classList) {}
+
+    First, it's important to understand that the part that's in parentheses, is called the record header
+
+    The record header consists of record components, a comma delimited list of components
+
+    For each component in the header, Java generates:
+        A field with the same name and declared type as the record component
+
+        The field is declared private and final 
+
+        The field is sometimes referred to as a component field.
+
+    Java gneerates a toString method that prints out each attribute in a formatted String.
+
+    In additiona to creating a private final field for each component, Java generates a public accessor method for each component
+    
+    This method has the same name and type of the component, but it doesn't have any kind of special prefix, no get, or is 
+
+    The accessor method, for id is id()
+
+Why have an immutable record?
+    Why is the record built to be immutable?
+
+    There are more use cases for immutable data transfer objects, and keeping them well encapsulated.
+
+    You want to protect the data from unintended mutations.
+
+Inheritance
+    What is inheritance, and why is it so powerful?
+
+    We can look at inheritance as a form of code re-use.
+
+    It's a way to organize classes into a parent-child hierarchy, which lets the child inherit (reuse), fields and methods from it parent.
+
+Extends
+    Using extends specifies the superclass (or the parent class) of the class we're declaring.
+
+    We can say Dog is a subclass, or child class, of animals
+
+    We can say animal is a parent, or super class, of Dog
+
+    A class can specify one, and only one class inits extends clause
+
+Super()
+    super() is a lot like this()
+
+    It's a way to call constructor on the super class, directly from the sub class's constructor
+
+    Like this(), it has to be the first statement of the constructor.
+
+    Because of that rule, this() and super() can never be called from the same constructor
+
+    if you don't make a call to super(), then java makes it for you, using super's default constructor
+
+    If your super class doesn't have a default constuctor, than you must explicitly call super() in all of your constructor,
+    passing the right arguments to that constructor
+
+Code Re-use
+    All subclasses can execute methods, even though the code is declared on the parent class.
+
+    The code doesn't have to be duplicated in each subclass/
+
+    We can use code, from the parent.
+
+    or we can change that code for the subclass.
+
+Overriding a Methods
+    Overriding a method is when you create a method on a subclass, which has the same signature as a method on a super class.
+
+    You override a parent class method, when you want the child class to show different behavior for that method.
+
+    The overridden method can do one of three things:
+        It can implement completely different behavior, overriding the behavior of the parent.
+
+        It can simply call the parent class's method, which is somewhat redundant to do.
+
+        Or the method can call the parent class's method and include other code to run, so it can extend the functionality for the Dog, for that behavior
+
+Polymorhphism
+    simply means many forms
+
+    It makes code simpler
+
+    It encourages code extensibility
+
+This vs Super
+    Let's discuss the difference between the this, and super keywords.
+
+    We'll also find out about the differences betwen the this(), and super(), method calls
+
+    The keyword super is used to access or call the parent class members (variables and methods).
+
+    The keyword this is used to call the current class members (variables and methods).
+
+    This is required, when we jave a parameter with the same name, as an instance variable or field.
+
+    NOTE: we can use either of them anywhere in a class, exception for static elements, like a static method.
+    Any attempt to do so there, will lead to compile time errors.
+
+    The keyword this, is commonly used with constructor and setters, and optionally used in getters.
+
+    in java we've got the this() and super() call. Notice the parenthese.
+
+    These are known as calls, since it looks like a regular method call, although we're calling certain constructors.
+
+    Use this() to call a constructor, from another overloaded constructor in the same class
+
+    The call to this() can only be used in a constructor, and it must be the first statement in a constructor.
+
+    It's used with constructor chaining, in other words when one constructor calls another constructor, and it helps to reduce duplicated code
+
+    The only way to call a parent constructor, is by calling super(), which calls the parent constructor.
+
+    The java compiler puts a default call to super(), if we don't add it, and it's always a call to the no argument constructor, which is inserted by the compiler.
+
+    The call to super() must be the first statment in each constructor
+
+    A constructor can have a call to super() or this(), but never both.
+
+Method Overloading vs overriding
+    Method overriding, means defining a method in a child class, that already exists in the parent class, with the same signature (the same name, same arguements)
+
+    By extending the parent class, the child class gets all the methods defined in the parent class (those methods are also known as derived methods)
+
+    Method overriding is also known as Runtime Polymorhphism or Dynamic method dispatch, because the method that is going to be called, is decided at runtime, by the java virtual machine.
+
+    When we override a method, it's recommaneded to put @Override, immediately above the method definition.
+
+    The @Override statement is not required, but it's a way to get the compiler to flag an error, if you don't actually properly override this method
+
+    We'll get an error, if we don't follow the overriding rules correctly.
+
+    We can't override static methods, only instance methods can be overridden
+
+Method overriding rules
+    same name and same arguments
+
+    the return type can be a subclass of return type in the parent class.
+
+    it can't have a lower access modifier. In other words, it can't have more restrictive access privileges.
+
+    For example, if the parent's method is protected, then using private in the child's overrrideen method is now allowed. However, using public for the childs' emthod
+    be allowed
+
+    only inherited methods can be overridden, in other words, methods can be overridden only in child classes.
+
+    Constructors and private methods cannot be overridden
+
+    Methods that are final cannot be overridden
+    
+    A subclass can use super.methodName() to call the superclass version of an overrideen method.
+
+Covariant Return type
+    The return type of an overridden method can be the same type as the parent method's declaration.
+
+    But it can also be a subclass
+
+    The term, Covariant return type, is more appropriate
+
+    But in general, when you're cloning an instance, you're going to want to return an Object, that's the same type as the Object you are cloning.
+
+    Remember, we said all classes ultimately have Object as a base class, so every class can be said to be a covariant of object.
+
+What's text block?
+
+    A text block is just a special format for multi-line string literals.
+
+    It's simply a String, with new representation in the source code
+
+Some common Escape Sequences
+    An escape sequences starts with a backslash. Java has several.
+        \t => insert a tab character
+        \n => insert a new line
+        \" => insert a double quote character
+        \\ => insert a backslash character
+
+Format Specifiers
+    At their most complex, format specifiers take the form shown here.
+
+    %[argument_index$][flags][width][.precision]conversion
+
+    They start with a percent sign, and end with a convertsion symbol, and have lot of options in between.
+
+    We've looked at one conversion type, d, which is the symbol used for a decimal integer value.
+
+The string
+    The String has over 60 methods available
+
+    The string is a seq of character, meaning its characters are ordered and indexed
+
+The purpose of String methods
+    We can split String's methods up into three basic categories;
+        String Inspection methods.
+
+        Methods for comparing string values
+        
+        string manipulation methods
+
+    length
+        returns the number of characters in the String
+
+    charAt
+        returns the character at the index that's passed
+
+    indexOf or lastIndexOf
+        returns an integer, representing the index in the sequence where the String or character passed, can be located in the String
+
+    isEmpty
+        returns true if lenght is zero
+
+    isBlank
+        returns true if length is zero or the string only contains whitespace characters
+
+String Comparison Methods
+    contentEquals 
+        Returns a boolean if the String's value is equal to the value of the arguemtn passed.
+        This method allows for arguments other than String, for any type that is a character
+        sequence
+
+    equals
+        Return a boolean if the String's value is equal to the value of the argument passed.
+
+    equalsIgnoreCase
+        Return a boolean if the String's value is equal (ignore case), to the value of the argument passed.
+
+    contains
+        returns a boolean if the String contains the argument passed
+
+    endsWith, startWith
+        These return a boolean, and are much lke the contains method, but more specific to the placement of the argument in the String.
+
+    regionWith
+        returns a boolean, if defined sub-regions are matched
+
+Strig manipulation
+    Doesn't tranform the string
+        indent 
+            this method was added in JDK 15, and adds or removes spaces from the beginning of lines in multi-line text.
+
+        strip, stripLeading, stripTrailing, trim
+            The difference between the strip method and trim method is that the strip() supports a larger set of white spaces
+            characters. It and the corresponding stripLeading and stripTrailing methods were added in JDK 11
+
+        toLowerCase, toUpperCase
+            Returns a new String, either in a lower case or in upper case
+
+    Transform the String value
+        concat 
+            similar to the plus operator for strings, it concatenates text to the String and returns a new String as the result
+
+        join
+            Allows multiple strings to be concatenateed together in a single method, specifying a delimiter
+
+        repeat
+            returns the string repeated by the number of times specified in the argument
+
+        replace, replaceAll, replaceFirst
+            These methods replace characters or strings in the string, returning a new String with replacements made.
+
+        substring, subSequence
+            These return a part of the String, its range defined by the start and end index specified.
+
+String vs StringBuilder
+    Java provide a mutable calss that lets us change it text value.
+
+    This is the StringBuiler class
+    
+    Four ways
+        pass a string
+
+        pass no arguments at all
+
+        pass an integer value
+
+        pass some other type of character sequence (like StringBuilder)
+
+    String methods create a new object in memory, and return a reference to this new object.
+
+    StringBuilder methods return a StringBuilder reference, but it's really self-reference
+
+    delete, deleteCharAt
+        you can delete a substring using indices to specify a range, or delete a single character at an index
+
+    insert 
+        You can insert text at a specified position
+
+    reverse 
+        you can reverse the order of the characters in the sequence
+
+    setLength
+        setLength can be used to truncate the sequence, or include null sequence to "fill out" the sequence to that length.
+    
+
