@@ -1,0 +1,2 @@
+
+        Comedy comedyMovie = (Comedy) comedy;

@@ -1,0 +1,156 @@
+Arrays 
+
+    Lets look at way to store, and manipulate, multiple values of the same type.
+
+    The most common way to do this, in Java, is with an array.
+
+    An array is a data structure, that allows you to store a sequence of values, all of the same type.
+
+    You can have arrays for any primitive type, like ints, doubles, booleans, or any of the 8 primitives we've learned about.
+
+    You can also have arrays for any class
+
+    Elements in an array are indexed, starting at 0.
+
+Declaring an array
+    When you declare an array, you first specify the type of the elements you want in the array.
+
+    Then you include square brackets in the declaration, which is the key for java, to identify the variable as an array.
+
+    The square brackets can follow the type as shown in the first two examples
+
+    This is much more common.
+
+    The bracket can also be after the variable name, as shown in the last examples
+
+    example
+        1. int[] integerArray;
+        2. String[] nameList;
+        3. String courseList[];
+
+Instantiating an array
+    int[] integerArray = new int[10];
+
+    One way to instantiate the array, is with the new keyword, much as we've seen, with most of the classes we've used to date, with the exception of String
+
+    On this slide, we have an array declaration on the left of the equals sign, and then an array creation expression on the right side.
+
+    Square brackets are required when using the new keyword, and a size is specified between them. So in this example, there will be 10 elements in the array.
+
+    An array instantiation doesn't have a set of parenthese, meaning we can't pass data to a constructor for an array.
+
+    In fact, using parentheses with any array instantiation, gives you a compiler error.
+
+    The size of an array, once created, is fixed
+
+    You can't change the size of an array, after the array is instantiated
+
+    We can't add or delete elements, we can only assign values to one of the ten elements in this array, in this example.
+
+The array initializer
+
+    An array initializer, makes the job of instantiating and initializing a small array, much easier
+
+    int[] firstFivePositives = new int[]{1,2,3,4,5};
+
+    In this example, you can see we still use the new keyword, and have int, with the square brackets.
+
+    But here we specify the values, we want the array to be initialized to, in a comma delimited list, in curly braces.
+
+    Because these values are specified, the length of the array can be determined, so we don't specify the size in the square brackets.
+
+    anonymous array:
+        int[] firstFivePositives = {1,2,3,4,5};
+
+        String names = {"Andy", "Bob", "Charlie", "David", "Eve"};
+
+        An anaonymous array initializer, can only be used in a declaration statement.
+
+    An array is a special class in java
+
+    It's still a class
+
+    The array, like all other classes, ultimately inherits from java.lang.Object.
+
+Array initialization and default elements values
+    When you don't use an array initializer statment, all array elements get initialized to the default value for that type
+
+    primitive types, this is zero for any kind of numeric primitive, like int, double, or short
+
+    For booleans, the default value will be false
+
+    and for any class type, the elements will be initialized to null
+
+The enhanced for loop, the for each loop
+    This loop was designed to walk through elements in an array, or some other type of collection.
+
+    It processes one element at a time, from the first element to the last.
+
+    Enhanced For loop
+        for (declaration : collection){
+
+        }
+
+    The enhanced for loop only has two components
+
+    It's important to notice, that the separator character between components, is a colon, and not a semi-colon, for the Enhanced For Loop.
+
+    The first part is a declaration expression, which includes the type and a variable name.
+    This is usually a local variable with the same type as an element in the array
+
+    and the second component is the array, or some other collection variable.
+
+java.util.Arrays
+    Java's array type is very basic, it comes with very little built-in functionality
+
+    It has a single property or field, named length.
+
+    and it inherits java.util.Object's functionality
+
+    Java provides a helper class named java.util.Arrays, providing common functionality, you'd want for many array operations
+
+    These are static methods on Arrays, so are class methods, not instance methods
+
+Printing elements in an array using Arrays.toString()
+    The toString method on this helper class, print out all the array elements, comma delimited, and contained in square bracket.
+
+    String arrayElementsInAString = Arrays.toString(newArray);
+
+Why use arrays?
+    We use arrays to manage many items of the same type.
+
+    Some common behavior for arrays would be sorting, initializing values, copying the array, and finding an element.
+
+    For an array, this behavior isn't on the array instace itself, but it's provided on a help class, java.util.Arrays.
+
+Arrays.binarySearch
+    The static method, binarySearch, is on the Arrays class.
+
+    We can use this method, to testif a value is already in our array, but there are some important things to remember.
+
+        First, the array has to be sorted.
+
+        Second, if there are duplicate values in the array, there's no guarantee which one it'll may lead to erros and invalid results
+
+        This method returns:
+            it returns a -1 when no match was found.
+
+            It important to remember, that a positive number may not be the position of the first match.
+
+            If your array has duplicate values, and you need to find the first element, other methods should be used.
+
+When can you use variable arguments (varargs)?
+
+    There can be only one variable argument in a method.
+
+    The variable argument must be the last argument
+
+Java's nested arrays
+    An array element can actually be an array. It's known as a nested array, or an array assigned to an outer array's element.
+
+    This is how Java supports two and three dimensional array, of varying demensions.
+
+    A 2-dimensional array doesn't have to be a uniform matrix through
+    
+    This means the nested arrays can be different sizes, as we show with this next initialization statement
+    

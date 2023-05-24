@@ -1,0 +1,184 @@
+
+Composition
+    inheritance defines an IS A relationship
+
+    Compostion defines a HAS A relationship
+
+    to keep the diagram simple PersonalComputer inherits from Product.
+
+    But a Person comupter, in additional to being a product, is actually made up of other parts.
+
+    Composition is actually modeling parts, and those parts make up a greater whole.
+
+    In this case we're going to model the personal comupter
+
+    and we're modeling the has a relationship, with the motherboard, the case and the monitor.
+
+    Composition is a way to make the combination of classes, act like a single coherent object
+
+    We built this peronsal computer, by passing objects to the constructor, like assembling the computer.
+
+    We can actually hide the functionality further.
+
+    In this case, we're not going to allow the calling program, to access those objects, the parts directly
+
+    We don't want anybody to access the Monitor, motherboard or ComputerCase directly
+
+    As a general rule, when you're desiging your programs in java, you probably want to look at composition first.
+
+    Most of the experts will tell you, that as a rule, look at the using composition before implementing inheritance.
+
+Why is compsition preferred over inheritance in many design?
+    The reasons composition is preferred over inheritance:
+        composition is mor flexiable. You can add parts in, or remove them, and these changes are less likely to have a downstream effect.
+
+        Composition provides functional reuse outside of the class heirarchy, meaning classes can share attributes & behavior, by having similar
+        components, instead of inheriting functionality from a parent or base class.
+
+        Java's inheritance breaks. encasulation, because subclasses may need direct access to a parent's state or behavior.
+
+Why is ingeritance less flexiable?
+    Adding a class to, or removing a class from, a class heirarchy, may impact all subclasses from that point.
+
+    In addition, a new subclass may not need all the functionality or attributes of its parent class.
+
+Encapsulation:
+    In java, Encapsulation means hiding things, by making them private or inaccessible
+
+    Why would we want to hide things in Java?
+        to make the interface simpler, we may want to hide unncessary details
+
+        to protect the integrity of data on an object, we may hide or restrict access to some of the data and operations.
+
+        to decouple the published interface from the internal details of the class, we may hide actual names and types of class members.
+
+    When we talk about a class's public or published interface, we're really talking about the class members that are exposed to, or can be accessed by, the calling code.
+
+    Everything else in the class is internal, or private to its
+
+    An application programming interface, or API, is the public contract, that tells others how to use the class.
+
+    Allowing direct access to data on an object, can potentially bypass check, and additional processing, your class has in place to manage the data.
+
+    Allowing direct accesss to fields, means calling code would need to change, when you edit any of the fields.
+
+    Omitting a constructor, that would accept initialization data, may mean the calling code is repsonbile for setting up this data, on the new object.
+
+The problems when classes aren't properly encapsulated
+
+    Allowing direct access to data on an object, can bypass checks and operations.
+
+    It encourages an interdependency, or coupling between the calling code and the class.
+
+Encapsulation Principles
+    To create an encapsulated class, you want to:
+        Create constructors for object initialization, whcih enfore that only object with valid data will get created
+
+        Use the private access modifier for your fields
+        
+        User setter and getter methods sparingly and only as needed
+
+        Use access modifiers that aren't private, only for the methods that the calling code need to use
+
+Polymorphism
+    lets us write code to call a method, but at runtime, this method's behavior can be different, for different objects
+
+    this means the behavior that occurs, while the program is executing, depends on the runtime type of the object
+
+    and the runtime type, might be different from the declared type in the code
+
+    The declared type has to have some kind of relationship to the runtime type, and inheritance is one way to establish this relationship
+
+What is var?
+    var, is a special contextual keyword in java, that lets our code take advantage of local variable Type Inference
+
+    By using var as the type, we're telling java to figure out the compile-time type for us
+
+    Local variable type inference was introduced in Java 10.
+
+    One of the benefits is to help with the readability of the code, and to reduce boilerplate code.
+
+    It's called local variable type inference for a reason, because:
+        it can't be used in field delcarations on a class
+
+        it can't be used in method signatures, either as parameter type of a return type.
+
+        it can't be used without an assignment, because the type can't be inferred in that case.
+
+        it can't be assigned a null literal, again becaues a type can't be inferred in that case.
+
+Run time vs Compile time typing.
+
+    You can think of the compile time type as the declared type
+    
+    This type is declared either as a variable reference, or a method return type, or a method parameter for example
+
+    In the case of LVTI, we don't declare a type for the compiled reference type, it gets inferred, but the byte code is the same, as if we had declared it
+
+    In many cases, the compile time type, is the declared type to the left of the assignment operator
+
+    What is returned on the right side of the assignment operator, from whatever expression or method is executed, sometimes can only be determined at runtime,
+    when the code is executing conditionally, through the statement in the code
+
+    You can assign a runtime instance, to a different compile time type, only if certain rules are followed.
+
+    We can assign an instance to a variable of the same type, or a parent type, or a parent's parent type, includig java.lang.Object, the ultimate base class.
+
+instanceof operator
+    The instanceof operator, lets you test the type of an object or instance
+
+    The reference variable you are testing, is the left operand.
+
+    The type you are testing for, is the right operand
+
+Pattern Matching for the instanceof operator
+    if the JVM can identify that the object matches the type, it can extract data from the object, without casting.
+
+    Example:
+        for this operator, the object can be assigned to a binding variable, which here is called syfy
+
+        unknownObject instaceof ScienceFicition syfy
+
+        The variable syfy (if the instanceof method returns true) is already typed as a ScienceFicition variable.
+
+Package
+    As per the Oracle Java Documentation:
+
+    A Package is a namespace that organizes a set of related types.
+
+    In general, a package corresponds to a folder or directory, on the operating system, but this isn't a requirement.
+
+    The package structure is hierarchical, meaning you group types in a tree fashion.
+
+    You can use any legal java identifier for your package names, but common practive has package names as all lower case.
+
+    The period separates the heirarchical level of the package
+    
+    packages let us re-use common class names across different libraries or applications, and provide a way to identify the correct class,
+    either with an importa statement, or a qualifying names
+
+    For example, you might have a package for utility classes, that can provide common functionality, for all of your classes to access.
+
+    Package let us organize our classes by functionality, or relationship
+
+    Package also let us encapsulate our classes, from classes in other packages.
+
+    So you might have a package of tightly coupled classes, that should only be accessed by each other, but not by the outside world,
+    as an example.
+
+What would a package name look like?
+    We've seen that java starts their package names with java, in some of the examples we've looked at.
+
+    However, it is common practice, to use the reverse domain name to start your own package naming conventions.
+ 
+    If your company is abccompany.com for example, your package prefixes would be be com.abccompany
+
+using the package statement 
+    for your applications, you should always specify a package statement, and avoid using the default or unnamed package.
+
+    Although that's all we've been using up until now, it has some disadvantages when you work in a true development environment.
+
+    The main disadvantages is you can't import types from the default package into other classes, outside of the default package.
+
+    In other words, you can't qualify the name, if it's in the default package, and you can't import classes from the default package
+
